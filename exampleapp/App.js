@@ -268,7 +268,7 @@ const Loading = props =>
   props.hasErrored ? (
     <TouchableWithoutFeedback onPress={props.fetchCategories}>
       <View style={styles.center}>
-        <Text>oops... something went wrong. Tap to reload</Text>
+        <Text allowFontScaling={false}>oops... something went wrong. Tap to reload</Text>
       </View>
     </TouchableWithoutFeedback>
   ) : (
@@ -282,7 +282,7 @@ const Toggle = props => (
     onPress={() => props.onPress(!props.val)}
     disabled={props.disabled}>
     <View style={styles.switch}>
-      <Text style={styles.label}>{props.name}</Text>
+      <Text allowFontScaling={false} style={styles.label}>{props.name}</Text>
       <Switch
         trackColor={tintColor}
         onValueChange={v => props.onPress(v)}
@@ -520,7 +520,7 @@ export default class App extends Component {
 
   noResults = (
     <View key="a" style={styles.center}>
-      <Text>Sorry! No results...</Text>
+      <Text allowFontScaling={false}>Sorry! No results...</Text>
     </View>
   )
 
@@ -569,7 +569,7 @@ export default class App extends Component {
           })
           .join('')}`
       : 'Select a fruit'
-    return <Text style={{ color: 'red', fontSize: 24 }}>{selectText}</Text>
+    return <Text allowFontScaling={false} style={{ color: 'red', fontSize: 24 }}>{selectText}</Text>
   }
 
   SelectOrRemoveAll = () =>
@@ -588,7 +588,7 @@ export default class App extends Component {
             ? this.SectionedMultiSelect._removeAllItems
             : this.SectionedMultiSelect._selectAllItems
         }>
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>
+        <Text allowFontScaling={false} style={{ color: 'white', fontWeight: 'bold' }}>
           {this.state.selectedItems.length ? 'Remove' : 'Select'} all
         </Text>
       </TouchableOpacity>
@@ -601,7 +601,7 @@ export default class App extends Component {
     console.log('props', props)
     return (
       <View style={{ backgroundColor: 'yellow', padding: 15 }}>
-        <Text>Selected:</Text>
+        <Text allowFontScaling={false}>Selected:</Text>
         {props.selectedItems.map(singleSelectedItem => {
           const item = this.SectionedMultiSelect._findItem(singleSelectedItem)
 
@@ -620,7 +620,7 @@ export default class App extends Component {
                 onPress={() => {
                   this.SectionedMultiSelect._removeItem(item)
                 }}>
-                <Text>{item[props.displayKey]}</Text>
+                <Text allowFontScaling={false}>{item[props.displayKey]}</Text>
               </TouchableOpacity>
             </View>
           )
@@ -634,7 +634,7 @@ export default class App extends Component {
         keyboardShouldPersistTaps="always"
         style={{ backgroundColor: '#f8f8f8' }}
         contentContainerStyle={styles.container}>
-        <Text style={styles.welcome}>
+        <Text allowFontScaling={false} style={styles.welcome}>
           React native sectioned multi select example.
         </Text>
         <SectionedMultiSelect
@@ -724,7 +724,7 @@ export default class App extends Component {
         />
         <View>
           <View style={styles.border}>
-            <Text style={styles.heading}>Settings</Text>
+            <Text allowFontScaling={false} style={styles.heading}>Settings</Text>
           </View>
 
           <Toggle
@@ -769,7 +769,7 @@ export default class App extends Component {
           <TouchableWithoutFeedback
             onPress={() => this.SectionedMultiSelect._removeAllItems()}>
             <View style={styles.switch}>
-              <Text style={styles.label}>Remove All</Text>
+              <Text allowFontScaling={false} style={styles.label}>Remove All</Text>
             </View>
           </TouchableWithoutFeedback>
         </View>

@@ -130,7 +130,7 @@ SelectOrRemoveAll = () =>
           ? this.SectionedMultiSelect._removeAllItems
           : this.SectionedMultiSelect._selectAllItems
       }>
-      <Text style={{ color: 'white', fontWeight: 'bold' }}>
+      <Text allowFontScaling={false} style={{ color: 'white', fontWeight: 'bold' }}>
         {this.state.selectedItems.length ? 'Remove' : 'Select'} all
       </Text>
     </TouchableOpacity>
